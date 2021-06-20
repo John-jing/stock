@@ -16,6 +16,7 @@ public class Stock {
   private String name;
   private double price;
   private String type;
+  private String detailUrl;
   private java.sql.Timestamp createdOn;
   private java.sql.Timestamp updatedOn;
 
