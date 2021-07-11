@@ -17,6 +17,7 @@
   <modules>
     <module>entity</module>
     <module>core</module>
+    <module>es</module>
   </modules>
   <packaging>pom</packaging>
 

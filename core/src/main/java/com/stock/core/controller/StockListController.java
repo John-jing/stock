@@ -2,6 +2,7 @@ package com.stock.core.controller;
 
 
 import cn.hutool.core.util.NumberUtil;
+import com.stock.core.controller.base.BaseController;
 import com.stock.core.service.IStockService;
 import com.stock.entity.Stock;
 import lombok.extern.slf4j.Slf4j;
@@ -18,15 +19,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
+import static com.stock.core.controller.base.BaseController.BASE_PATH;
 
 
-@RequestMapping(value = "/test")
+@RequestMapping(value = BASE_PATH + "/stock-list")
 @RestController
 @Slf4j
-public class TestController {
-
-  private static final Pattern STOCK_NAME_PATTERN = Pattern.compile("([\\u4E00-\\u9FA5A-Za-z_-]+)\\(([0-9]{6})\\)$");
+public class StockListController extends BaseController {
 
   @Autowired
   private IStockService stockService;
