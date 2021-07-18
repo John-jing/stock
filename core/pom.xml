@@ -22,16 +22,19 @@
       <groupId>com.astock</groupId>
       <version>${project.version}</version>
     </dependency>
-
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>5.2.4.RELEASE</version>
+      <artifactId>es</artifactId>
+      <groupId>com.astock</groupId>
+      <version>${project.version}</version>
     </dependency>
     <!--    Spring boot-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-aop</artifactId>
     </dependency>
     <!--    Spring boot-->
     <!--    <dependency>-->
@@ -43,9 +46,9 @@
     <!--      <groupId>org.springframework.cloud</groupId>-->
     <!--      <artifactId>spring-cloud-dependencies</artifactId>-->
     <!--      <version>${spring-cloud.version}</version>-->
-<!--      <type>pom</type>-->
-<!--      <scope>import</scope>-->
-<!--    </dependency>-->
+    <!--      <type>pom</type>-->
+    <!--      <scope>import</scope>-->
+    <!--    </dependency>-->
 
     <!--    <dependency>-->
     <!--      <groupId>com.netease.ncc.base</groupId>-->
@@ -95,8 +98,8 @@
     <!--          <groupId>org.junit.vintage</groupId>-->
     <!--          <artifactId>junit-vintage-engine</artifactId>-->
     <!--        </exclusion>-->
-<!--      </exclusions>-->
-<!--    </dependency>-->
+    <!--      </exclusions>-->
+    <!--    </dependency>-->
 
   </dependencies>
 
