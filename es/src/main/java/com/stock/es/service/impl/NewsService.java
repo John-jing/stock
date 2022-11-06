@@ -43,12 +43,12 @@ public class NewsService implements INewsService {
   }
 
   @Override
-  public Page<News> findByAuthor(String author, PageRequest pageRequest) {
-    return newsRepository.findByAuthor(author, pageRequest);
+  public Page<News> findByPostDate(String postDate, PageRequest pageRequest) {
+    return newsRepository.findByPostDate(postDate, pageRequest);
   }
 
   @Override
-  public Page<News> findByTitle(String title, PageRequest pageRequest) {
-    return newsRepository.findByTitle(title, pageRequest);
+  public Page<News> findByUrl(String url, PageRequest pageRequest) {
+    return newsRepository.findByUrl(url, pageRequest);
   }
 }

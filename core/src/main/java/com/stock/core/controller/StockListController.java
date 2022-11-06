@@ -1,8 +1,8 @@
 package com.stock.core.controller;
 
 
-import cn.hutool.core.util.NumberUtil;
 import com.stock.core.controller.base.BaseController;
+import com.stock.core.schedule.StockJob;
 import com.stock.core.service.IStockService;
 import com.stock.entity.Stock;
 import lombok.extern.slf4j.Slf4j;
@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 
@@ -31,6 +33,15 @@ public class StockListController extends BaseController {
   @Autowired
   private IStockService stockService;
 
+  @Resource
+  private StockJob stockJob;
+
+  @GetMapping("sync")
+  public List<Stock> syncStockList() {
+    stockJob.syncStockList();
+    return Collections.emptyList();
+  }
+
   @GetMapping
   public List<Stock> usrOrder(@RequestParam(required = false) String echostr) throws IOException {
     List<Stock> stocks = getFormWeb();
@@ -40,11 +51,11 @@ public class StockListController extends BaseController {
 
   private List<Stock> getFormWeb() throws IOException {
     Element resultDev = Jsoup.connect("http://www.bestopview.com/stocklist.html")
-       .userAgent("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36") //设置User-Agent
-       .timeout(3000)
-       .get()
-       .body()
-       .getElementsByClass("result").get(0);
+            .userAgent("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36") //设置User-Agent
+            .timeout(3000)
+            .get()
+            .body()
+            .getElementsByClass("result").get(0);
     Elements liList = resultDev.child(0).getElementsByTag("li");
     log.info("liList size:{}", liList.size());
     List<Stock> stocks = new ArrayList<>();
@@ -57,11 +68,11 @@ public class StockListController extends BaseController {
         String name = matcher.group(1);
         String code = matcher.group(2);
         Stock stock = Stock.builder()
-           .code(NumberUtil.parseInt(code))
-           .name(name)
-           .type("shang")
-           .detailUrl(aHref)
-           .build();
+                .code(code)
+                .name(name)
+                .category("shang")
+                .detailUrl(aHref)
+                .build();
 
         stocks.add(stock);
       }

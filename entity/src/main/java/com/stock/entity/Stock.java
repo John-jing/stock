@@ -1,21 +1,20 @@
 package com.stock.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ToString
 public class Stock {
 
   private long id;
-  private long code;
+  private String code;
   private String name;
+  private String namePy;
   private double price;
-  private String type;
+  private String category;
   private String detailUrl;
   private java.sql.Timestamp createdOn;
   private java.sql.Timestamp updatedOn;

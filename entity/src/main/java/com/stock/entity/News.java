@@ -16,8 +16,8 @@ public class News {
 
   @Id
   private String id;
-  private String title;
-  private String author;
+  private String url;
+  private String content;
   private String postDate;
 
 }

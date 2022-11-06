@@ -19,7 +19,7 @@ public interface INewsService {
 
   List<News> findAll();
 
-  Page<News> findByAuthor(String author, PageRequest pageRequest);
+  Page<News> findByPostDate(String author, PageRequest pageRequest);
 
-  Page<News> findByTitle(String title, PageRequest pageRequest);
+  Page<News> findByUrl(String url, PageRequest pageRequest);
 }
