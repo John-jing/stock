@@ -1,6 +1,6 @@
 package com.stock.core.service;
 
-import com.stock.entity.News;
+import com.stock.core.entity.News;
 
 import java.util.Set;
 

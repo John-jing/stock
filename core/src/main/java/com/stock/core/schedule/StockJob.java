@@ -2,11 +2,12 @@ package com.stock.core.schedule;
 
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.stock.core.entity.Stock;
 import com.stock.core.service.IStockService;
 import com.stock.core.service.stocklist.DefaultStockListComponent;
-import com.stock.entity.Stock;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -30,6 +31,7 @@ public class StockJob {
   @Resource
   private IStockService stockService;
 
+  @Scheduled(cron = "0 0 10 * * ?")
   public void syncStockList() {
     log.debug("======================syncStockList start...==========================");
     long t1 = System.currentTimeMillis();
@@ -57,7 +59,6 @@ public class StockJob {
       stockService.remove(new LambdaQueryWrapper<Stock>()
               .in(Stock::getCode, existStockCodes));
     }
-
 
     long t2 = System.currentTimeMillis();
     log.debug("======================syncStockList end. cost:{}..==========================", t2 - t1);

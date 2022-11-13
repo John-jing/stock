@@ -2,9 +2,9 @@ package com.stock.core.controller;
 
 
 import com.stock.core.controller.base.BaseController;
+import com.stock.core.entity.Stock;
 import com.stock.core.schedule.StockJob;
 import com.stock.core.service.IStockService;
-import com.stock.entity.Stock;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;

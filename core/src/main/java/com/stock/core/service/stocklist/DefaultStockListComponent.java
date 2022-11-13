@@ -6,8 +6,8 @@ import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
+import com.stock.core.entity.Stock;
 import com.stock.core.service.StockListComponent;
-import com.stock.entity.Stock;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +24,8 @@ import static com.stock.core.constant.HttpConstant.HEADER;
 @Slf4j
 @Component
 public class DefaultStockListComponent implements StockListComponent {
+
+  @Deprecated
   public static void main(String[] args) {
     new DefaultStockListComponent().allStock();
   }

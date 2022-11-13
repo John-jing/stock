@@ -6,6 +6,8 @@ spring:
   elasticsearch:
     rest:
       uris: http://localhost:9200
+      username:
+      password:
   datasource:
     url: jdbc:mysql://localhost:3306/astock?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
     username: root
@@ -33,8 +35,8 @@ spring:
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.stock.entity
-  typeEnumsPackage: com.stock.entity.enums
+  typeAliasesPackage: com.stock.core.entity
+  typeEnumsPackage: com.stock.core.entity.enums
   global-config:
     # 数据库相关配置
     db-config:

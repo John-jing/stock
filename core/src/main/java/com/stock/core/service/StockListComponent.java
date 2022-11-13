@@ -1,6 +1,6 @@
 package com.stock.core.service;
 
-import com.stock.entity.Stock;
+import com.stock.core.entity.Stock;
 
 import java.util.List;
 
