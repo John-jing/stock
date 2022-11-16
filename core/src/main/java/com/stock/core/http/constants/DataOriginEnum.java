@@ -14,6 +14,7 @@ public enum DataOriginEnum {
    * 东方财富
    */
   DFCF("东方财富", "http://push2ex.eastmoney.com"),
+  THS("同花顺个股", "https://d.10jqka.com.cn"),
 
   ;
 
