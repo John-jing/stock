@@ -4,6 +4,3 @@ echo 'git commit -m "sync"'
 git commit -m "sync"
 git pull
 git push
-
-
-git pull
