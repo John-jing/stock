@@ -6,18 +6,17 @@ import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.stock.core.entity.DailyLimit;
+import com.stock.core.utils.GitUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author caijinglong
@@ -37,24 +36,7 @@ public class TxtExport implements Export {
     dailyRaisingLimits.add(dailyLimit);
 //    new TxtExport().export(JSONUtil.parseArray(dailyRaisingLimits),
 //            "dailyRaisingLimit", LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")));
-
-    String syncShFile = System.getProperty("user.dir") + "\\sync\\sync.sh";
-    String commandStr = FileUtil.readUtf8String(syncShFile);
-    System.out.println(commandStr);
-    System.out.println(syncShFile);
-    Process process = Runtime.getRuntime().exec("git add .");
-    InputStreamReader ips = new InputStreamReader(process.getInputStream());
-    BufferedReader br = new BufferedReader(ips);
-    String line;
-    while ((line = br.readLine()) != null) {
-      System.out.println(line);
-    }
-    process = Runtime.getRuntime().exec("git status");
-    ips = new InputStreamReader(process.getInputStream());
-    br = new BufferedReader(ips);
-    while ((line = br.readLine()) != null) {
-      System.out.println(line);
-    }
+    GitUtils.push(Optional.empty());
 
   }
 
