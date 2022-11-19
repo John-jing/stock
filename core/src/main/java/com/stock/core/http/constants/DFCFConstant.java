@@ -1,4 +1,4 @@
-package com.stock.core.constant;
+package com.stock.core.http.constants;
 
 import java.util.HashMap;
 import java.util.Map;

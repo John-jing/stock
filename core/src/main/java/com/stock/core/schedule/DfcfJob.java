@@ -5,10 +5,11 @@ import cn.hutool.core.util.RandomUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
-import com.stock.core.constant.DFCFConstant;
 import com.stock.core.entity.DailyLimit;
 import com.stock.core.entity.DfcfQsPool;
-import com.stock.core.enums.DataOriginEnum;
+import com.stock.core.export.TxtExport;
+import com.stock.core.http.constants.DFCFConstant;
+import com.stock.core.http.constants.DataOriginEnum;
 import com.stock.core.model.dfcf.DailyLimitModel;
 import com.stock.core.model.dfcf.PageModel;
 import com.stock.core.service.IDailyLimitService;
@@ -28,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static com.stock.core.constant.HttpConstant.HEADER;
+import static com.stock.core.http.constants.HttpConstant.HEADER;
 
 /**
  * 东方财富
@@ -43,13 +44,16 @@ import static com.stock.core.constant.HttpConstant.HEADER;
 @EnableScheduling
 public class DfcfJob {
 
-  private static final LocalDate LOCAL_DATE = LocalDate.now().minusDays(3);
+  private static final LocalDate LOCAL_DATE = LocalDate.now().minusDays(1);
 
   @Resource
   private IDailyLimitService dailyLimitService;
 
   @Resource
   private IDfcfQsPoolService dfcfQsPoolService;
+
+  @Resource
+  private TxtExport txtExport;
 
   @Scheduled(cron = "0 0 17 * * ?")
   public void dailyRaisingLimit() {
@@ -63,8 +67,22 @@ public class DfcfJob {
       String path = "/getTopicZTPool";
       List<DailyLimitModel> dailyRaisingLimitModels = getFromDFCF(path, queryMap, Object.class);
       List<DailyLimit> dailyRaisingLimits = toDailyLimitEntity(daily, dailyRaisingLimitModels, isRaise);
-      dailyLimitService.saveBatch(dailyRaisingLimits);
+      try {
+        dailyLimitService.saveBatch(dailyRaisingLimits);
+      } catch (Exception e) {
+        log.error("doSyncRaisingLimit save error", e);
+      }
       log.debug("======================doSyncRaisingLimit end.==========================");
+
+      log.debug("======================doSyncRaisingLimit export start...{}==========================", daily);
+      try {
+        txtExport.export(JSONUtil.parseArray(dailyRaisingLimits),
+                "dailyRaisingLimit", LOCAL_DATE.format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+      } catch (Exception e) {
+        log.error("doSyncRaisingLimit export error", e);
+      }
+      log.debug("======================doSyncRaisingLimit export end.==========================");
+
     } catch (Exception e) {
       log.error("doSyncRaisingLimit error.", e);
     }
@@ -77,17 +95,28 @@ public class DfcfJob {
     boolean isRaise = false;
     Map<String, String> queryMap = new HashMap<>();
     queryMap.put("date", daily.format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+    List<DailyLimit> dailyDownLimits = Collections.emptyList();
     try {
       Thread.sleep(1000 + RandomUtil.randomInt(-500, 500));
       String path = "/getTopicDTPool";
       log.debug("======================doSyncDownLimit start...{}==========================", daily);
       List<DailyLimitModel> dailyDownLimitModels = getFromDFCF(path, queryMap, Object.class);
-      List<DailyLimit> dailyDownLimits = toDailyLimitEntity(daily, dailyDownLimitModels, isRaise);
+      dailyDownLimits = toDailyLimitEntity(daily, dailyDownLimitModels, isRaise);
       dailyLimitService.saveBatch(dailyDownLimits);
       log.debug("======================doSyncDownLimit end.==========================");
     } catch (Exception e) {
       log.error("doSyncDownLimit error.", e);
     }
+
+    log.debug("======================doSyncRaisingLimit export start...{}==========================", daily);
+    try {
+      txtExport.export(JSONUtil.parseArray(dailyDownLimits),
+              "dailyDownLimits", LOCAL_DATE.format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+    } catch (Exception e) {
+      log.error("doSyncRaisingLimit export error", e);
+    }
+    log.debug("======================doSyncRaisingLimit export end.==========================");
+
 
   }
 
@@ -138,19 +167,19 @@ public class DfcfJob {
     httpRequest.form(queryMap);
     httpRequest.header(HEADER);
     String body = httpRequest.execute().body();
-    log.debug("doSyncDailyLimit resulr:{}", body);
+    log.debug("getFromDFCF resulr:{}", body);
     PageModel pageModel = JSONUtil.toBean(body, PageModel.class);
     if (pageModel == null || pageModel.getData() == null) {
-      log.info("doSyncDailyLimit path:{}, query:{} return. pageModel or data is null", path, query);
+      log.info("getFromDFCF path:{}, query:{} return. pageModel or data is null", path, query);
       return Collections.emptyList();
     }
 
     Integer count = pageModel.getData().getTc();
     if (count > 0 && CollUtil.isEmpty(pageModel.getData().getPool())) {
-      log.error("doSyncDailyLimit path:{}, query:{} error. count:{}, but data.pool is empty", path, query, count);
+      log.error("getFromDFCF path:{}, query:{} error. count:{}, but data.pool is empty", path, query, count);
       return Collections.emptyList();
     }
-    log.info("doSyncDailyLimit count:{}", count);
+    log.info("getFromDFCF path:{}, count:{}", path, count);
     return pageModel.getData().getPool();
 
   }

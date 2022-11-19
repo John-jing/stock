@@ -2,6 +2,7 @@ package com.stock.core.listener;
 
 import com.stock.core.schedule.DfcfJob;
 import com.stock.core.schedule.StockJob;
+import com.stock.core.schedule.ThsJob;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -22,6 +23,9 @@ public class InitListener implements ApplicationListener<ContextRefreshedEvent> 
 
   @Resource
   private DfcfJob dfcfJob;
+
+  @Resource
+  private ThsJob thsJob;
 
   @Override
   public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
@@ -52,6 +56,12 @@ public class InitListener implements ApplicationListener<ContextRefreshedEvent> 
       dfcfJob.syncQsPool();
     } catch (Exception e) {
       log.error("syncDailyLimit", e);
+    }
+
+    try {
+      thsJob.syncTimingTendency();
+    } catch (Exception e) {
+      log.error("syncTimingTendency", e);
     }
 
   }

@@ -15,7 +15,7 @@ import java.io.File;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static com.stock.core.constant.HttpConstant.HEADER;
+import static com.stock.core.http.constants.HttpConstant.HEADER;
 
 /**
  * @author caijinglong

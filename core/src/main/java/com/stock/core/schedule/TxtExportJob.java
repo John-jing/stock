@@ -22,7 +22,7 @@ import java.util.List;
 import static com.stock.core.constant.DBConstant.LIMIT_ONE;
 
 /**
- * 同花顺
+ * 导出
  *
  * @author caijinglong
  * @date 2022-10-23
@@ -30,7 +30,7 @@ import static com.stock.core.constant.DBConstant.LIMIT_ONE;
 @Slf4j
 @Component
 @EnableScheduling
-public class ThsJob {
+public class TxtExportJob {
 
   @Resource
   private ITimingTendencyService timingTendencyService;

@@ -1,4 +1,4 @@
-package com.stock.core.enums;
+package com.stock.core.http.constants;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
