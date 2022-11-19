@@ -14,6 +14,7 @@ import com.stock.core.model.dfcf.DailyLimitModel;
 import com.stock.core.model.dfcf.PageModel;
 import com.stock.core.service.IDailyLimitService;
 import com.stock.core.service.IDfcfQsPoolService;
+import com.stock.core.utils.GitUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -23,10 +24,7 @@ import javax.annotation.Resource;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static com.stock.core.http.constants.HttpConstant.HEADER;
@@ -83,6 +81,14 @@ public class DfcfJob {
       }
       log.debug("======================doSyncRaisingLimit export end.==========================");
 
+      log.debug("======================GitUtils.push start...{}==========================", daily);
+      try {
+        GitUtils.push(Optional.of("doSyncRaisingLimit"));
+      } catch (Exception e) {
+        log.error("doSyncRaisingLimit export error", e);
+      }
+      log.debug("======================GitUtils.push end.==========================");
+
     } catch (Exception e) {
       log.error("doSyncRaisingLimit error.", e);
     }
@@ -117,6 +123,13 @@ public class DfcfJob {
     }
     log.debug("======================doSyncRaisingLimit export end.==========================");
 
+    log.debug("======================GitUtils.push start...{}==========================", daily);
+    try {
+      GitUtils.push(Optional.of("doSyncRaisingLimit"));
+    } catch (Exception e) {
+      log.error("doSyncRaisingLimit export error", e);
+    }
+    log.debug("======================GitUtils.push end.==========================");
 
   }
 
@@ -126,6 +139,7 @@ public class DfcfJob {
   @Scheduled(cron = "0 0 17 * * ?")
   public void syncQsPool() {
     LocalDate daily = LOCAL_DATE;
+    List<DfcfQsPool> dfcfQsPools = Collections.emptyList();
     try {
       Thread.sleep(1000 + RandomUtil.randomInt(-500, 500));
       log.debug("======================syncQsPool start...{}==========================", daily);
@@ -134,12 +148,29 @@ public class DfcfJob {
       queryMap.put("date", daily.format(DateTimeFormatter.ofPattern("yyyyMMdd")));
       List<DailyLimitModel> dailyRaisingLimitModels = getFromDFCF(path, queryMap, Object.class);
 
-      List<DfcfQsPool> dfcfQsPools = toQsPool(daily, dailyRaisingLimitModels);
+      dfcfQsPools = toQsPool(daily, dailyRaisingLimitModels);
       dfcfQsPoolService.saveBatch(dfcfQsPools);
       log.debug("======================syncQsPool end.==========================");
     } catch (Exception e) {
       log.error("syncQsPool error.", e);
     }
+
+    log.debug("======================doSyncRaisingLimit export start...{}==========================", daily);
+    try {
+      txtExport.export(JSONUtil.parseArray(dfcfQsPools),
+              "dailyDownLimits", LOCAL_DATE.format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+    } catch (Exception e) {
+      log.error("doSyncRaisingLimit export error", e);
+    }
+    log.debug("======================doSyncRaisingLimit export end.==========================");
+
+    log.debug("======================GitUtils.push start...{}==========================", daily);
+    try {
+      GitUtils.push(Optional.of("doSyncRaisingLimit"));
+    } catch (Exception e) {
+      log.error("doSyncRaisingLimit export error", e);
+    }
+    log.debug("======================GitUtils.push end.==========================");
 
   }
 
