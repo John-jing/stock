@@ -20,7 +20,7 @@ public class GitUtils {
               "git pull",
               "git push"
       };
-      Runtime  runtime = Runtime.getRuntime();
+      Runtime runtime = Runtime.getRuntime();
       for (String command : commands) {
         Process process = runtime.exec(command);
         BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
