@@ -13,10 +13,14 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+
+import static com.stock.core.constant.CommonConstants.EXPORT_PROJECT_PATH;
+import static com.stock.core.constant.CommonConstants.PROJECT_PATH;
 
 /**
  * @author caijinglong
@@ -27,6 +31,7 @@ import java.util.Optional;
 public class TxtExport implements Export {
 
   public static void main(String[] args) throws IOException {
+    System.out.println(System.getProperty("user.dir"));
     List<DailyLimit> dailyRaisingLimits = new ArrayList<>();
     DailyLimit dailyLimit = new DailyLimit()
             .setDaily(LocalDate.now())
@@ -34,9 +39,9 @@ public class TxtExport implements Export {
             .setCode("code")
             .setPrice(2.1);
     dailyRaisingLimits.add(dailyLimit);
-//    new TxtExport().export(JSONUtil.parseArray(dailyRaisingLimits),
-//            "dailyRaisingLimit", LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")));
-    GitUtils.push(Optional.empty());
+    new TxtExport().export(JSONUtil.parseArray(dailyRaisingLimits),
+            "dailyRaisingLimit", LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+    GitUtils.push1(Optional.empty());
 
   }
 
@@ -47,7 +52,7 @@ public class TxtExport implements Export {
     }
     try {
 
-      String fileNameWithPath = StrUtil.join("\\", PATH, filePath, fileName + fileSuffix());
+      String fileNameWithPath = StrUtil.join("\\", EXPORT_PROJECT_PATH, filePath, fileName + fileSuffix());
       log.info("export start... fileNameWithPath:{}, jsonArray.size:{}", fileNameWithPath, jsonArray.size());
       File file = FileUtil.file(fileNameWithPath);
       log.info("export file absolutePath:{}. ", file.getAbsolutePath());

@@ -1,3 +1,4 @@
+cd ../
 echo 'git add .'
 git add .
 echo 'git commit -m "sync"'

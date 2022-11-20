@@ -16,8 +16,6 @@ import java.util.stream.Collectors;
  */
 public interface Export {
 
-  String PATH = System.getProperty("user.dir") + "\\export";
-
   void export(JSONArray jsonArray, String filePath, String fileName);
 
   void export(JSONObject jsonObject, String filePath, String fileName);

@@ -83,7 +83,7 @@ public class DfcfJob {
 
       log.debug("======================GitUtils.push start...{}==========================", daily);
       try {
-        GitUtils.push(Optional.of("doSyncRaisingLimit"));
+        GitUtils.pushByBat(Optional.of("doSyncRaisingLimit"));
       } catch (Exception e) {
         log.error("doSyncRaisingLimit export error", e);
       }
@@ -125,7 +125,7 @@ public class DfcfJob {
 
     log.debug("======================GitUtils.push start...{}==========================", daily);
     try {
-      GitUtils.push(Optional.of("doSyncRaisingLimit"));
+      GitUtils.pushByBat(Optional.of("doSyncRaisingLimit"));
     } catch (Exception e) {
       log.error("doSyncRaisingLimit export error", e);
     }
@@ -166,7 +166,7 @@ public class DfcfJob {
 
     log.debug("======================GitUtils.push start...{}==========================", daily);
     try {
-      GitUtils.push(Optional.of("doSyncRaisingLimit"));
+      GitUtils.pushByBat(Optional.of("doSyncRaisingLimit"));
     } catch (Exception e) {
       log.error("doSyncRaisingLimit export error", e);
     }
