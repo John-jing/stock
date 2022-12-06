@@ -30,7 +30,7 @@ import static com.stock.core.constant.DBConstant.LIMIT_ONE;
 @Slf4j
 @Component
 @EnableScheduling
-public class ThsJob {
+public class CandlestickChartJob {
 
   @Resource
   private ITimingTendencyService timingTendencyService;

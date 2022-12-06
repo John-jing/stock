@@ -1,0 +1,173 @@
+[
+  {
+    "metadata": {
+      "catalogid": "SGT_GGTBDQD",
+      "name": "港股通标的证券名单",
+      "excel": "xlsx",
+      "pagetype": null,
+      "subname": "2022-12-02",
+      "tabkey": "tab1",
+      "csskey": [
+        {
+          "csskey": "/common/css/table_main.css"
+        }
+      ],
+      "pagesize": 20,
+      "pageno": 1,
+      "pagecount": 28,
+      "recordcount": 553,
+      "showrecordcount": false,
+      "header": "",
+      "footer": "",
+      "reporttype": null,
+      "tabcss": null,
+      "conditions": [
+        {
+          "label": "请输入证券代码或简称",
+          "name": "txtDMorJC",
+          "hidden": "0",
+          "defaultValue": "",
+          "labelstyle": "1",
+          "required": "false",
+          "inputType": "text",
+          "typeAhead": "/shortname/gethangqing?dataType=%5Bggtbd%5D&language=en&input=",
+          "options": null,
+          "property": null,
+          "maxlength": null,
+          "otherProperties": null,
+          "clientvalidate": ""
+        }
+      ],
+      "colStyle": {
+        "zqdm": {
+          "align": "center",
+          "group": "false",
+          "hidden": "0"
+        },
+        "zqjc": {
+          "align": "center",
+          "group": "false",
+          "hidden": "0"
+        },
+        "zqywjc": {
+          "align": "center",
+          "group": "false",
+          "hidden": "0"
+        }
+      },
+      "cols": {
+        "zqdm": "证券代码",
+        "zqjc": "中文简称",
+        "zqywjc": "英文简称"
+      },
+      "colspan": 0,
+      "notes": null,
+      "topHeader": "",
+      "hidden": "0",
+      "refreshCondition": false
+    },
+    "data": [
+      {
+        "zqdm": "00001",
+        "zqjc": "长和",
+        "zqywjc": "CKH HOLDINGS"
+      },
+      {
+        "zqdm": "00002",
+        "zqjc": "中电控股",
+        "zqywjc": "CLP HOLDINGS"
+      },
+      {
+        "zqdm": "00003",
+        "zqjc": "香港中华煤气",
+        "zqywjc": "HK & CHINA GAS"
+      },
+      {
+        "zqdm": "00004",
+        "zqjc": "九龙仓集团",
+        "zqywjc": "WHARF HOLDINGS"
+      },
+      {
+        "zqdm": "00005",
+        "zqjc": "汇丰控股",
+        "zqywjc": "HSBC HOLDINGS"
+      },
+      {
+        "zqdm": "00006",
+        "zqjc": "电能实业",
+        "zqywjc": "POWER ASSETS"
+      },
+      {
+        "zqdm": "00008",
+        "zqjc": "电讯盈科",
+        "zqywjc": "PCCW"
+      },
+      {
+        "zqdm": "00011",
+        "zqjc": "恒生银行",
+        "zqywjc": "HANG SENG BANK"
+      },
+      {
+        "zqdm": "00012",
+        "zqjc": "恒基地产",
+        "zqywjc": "HENDERSON LAND"
+      },
+      {
+        "zqdm": "00013",
+        "zqjc": "和黄医药",
+        "zqywjc": "HUTCHMED"
+      },
+      {
+        "zqdm": "00014",
+        "zqjc": "希慎兴业",
+        "zqywjc": "HYSAN DEV"
+      },
+      {
+        "zqdm": "00016",
+        "zqjc": "新鸿基地产",
+        "zqywjc": "SHK PPT"
+      },
+      {
+        "zqdm": "00017",
+        "zqjc": "新世界发展",
+        "zqywjc": "NEW WORLD DEV"
+      },
+      {
+        "zqdm": "00019",
+        "zqjc": "太古股份公司A",
+        "zqywjc": "SWIRE PACIFIC A"
+      },
+      {
+        "zqdm": "00020",
+        "zqjc": "商汤-W",
+        "zqywjc": "SENSETIME-W"
+      },
+      {
+        "zqdm": "00023",
+        "zqjc": "东亚银行",
+        "zqywjc": "BANK OF E ASIA"
+      },
+      {
+        "zqdm": "00027",
+        "zqjc": "银河娱乐",
+        "zqywjc": "GALAXY ENT"
+      },
+      {
+        "zqdm": "00038",
+        "zqjc": "第一拖拉机股份",
+        "zqywjc": "FIRST TRACTOR"
+      },
+      {
+        "zqdm": "00059",
+        "zqjc": "天誉置业",
+        "zqywjc": "SKYFAME REALTY"
+      },
+      {
+        "zqdm": "00066",
+        "zqjc": "港铁公司",
+        "zqywjc": "MTR CORPORATION"
+      }
+    ],
+    "error": null
+  }
+]

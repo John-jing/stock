@@ -1,0 +1,473 @@
+{
+  "ResultCode": "0",
+  "ResultNum": "1",
+  "Result": [
+    {
+      "ResultURL": "http:\/\/nourl.baidu.com\/34436",
+      "Weight": "3",
+      "SrcID": "34436",
+      "ClickNeed": "1",
+      "SubResult": [],
+      "SubResNum": "0",
+      "Sort": "1",
+      "RecoverCacheTime": "0",
+      "DisplayData": {
+        "StdStg": "34436",
+        "StdStl": "0",
+        "strategy": {
+          "tempName": "quotation_minute_ab",
+          "precharge": "0",
+          "ctplOrPhp": "1",
+          "hilightWord": ""
+        },
+        "resultData": {
+          "tplData": {
+            "cardName": "quotation_minute_ab",
+            "templateName": "quotation_minute_ab",
+            "StdStg": "34436",
+            "StdStl": "0",
+            "title": "",
+            "result": {
+              "site": "\u767e\u5ea6\u80a1\u5e02\u901a",
+              "order": "1",
+              "first_probability": "74",
+              "en_site": "baiduv2",
+              "start_date": "20220418112959",
+              "link": "https:\/\/gushitong.baidu.com\/stock\/ab-000001",
+              "api_url": "http:\/\/opendata.baidu.com\/api.php?resource_id=5353&group=quotation_minute_ab&query=000001&code=000001&all=1&pointType=string&dsp=pc&requestType=async&stockName=\u5e73\u5b89\u94f6\u884c&provideName=\u767e\u5ea6\u80a1\u5e02\u901a",
+              "title": "\u5e73\u5b89\u94f6\u884c[000001]A\u80a1\u5b9e\u65f6\u884c\u60c5 - \u767e\u5ea6\u80a1\u5e02\u901a",
+              "update_time": "0",
+              "name": "\u5e73\u5b89\u94f6\u884c",
+              "provider": "\u767e\u5ea6\u80a1\u5e02\u901a",
+              "pan": [
+                {
+                  "name": "\u4e0a\u8bc1",
+                  "value": "3101.69(+0.4%)",
+                  "url": "https:\/\/gushitong.baidu.com\/index\/ab-000001"
+                },
+                {
+                  "name": "\u6df1\u6210",
+                  "value": "10904.27(-0.48%)",
+                  "url": "https:\/\/gushitong.baidu.com\/index\/ab-399001"
+                }
+              ],
+              "basicinfos": {
+                "exchange": "SZ",
+                "code": "000001",
+                "name": "",
+                "stockStatus": "5",
+                "stock_market_code": "000001.SZ"
+              },
+              "askinfos": [
+                {
+                  "askprice": "12.22",
+                  "askvolume": "1412700"
+                },
+                {
+                  "askprice": "12.21",
+                  "askvolume": "1597900"
+                },
+                {
+                  "askprice": "12.2",
+                  "askvolume": "1994315"
+                },
+                {
+                  "askprice": "12.19",
+                  "askvolume": "1224311"
+                },
+                {
+                  "askprice": "12.18",
+                  "askvolume": "1486063"
+                }
+              ],
+              "buyinfos": [
+                {
+                  "bidprice": "12.17",
+                  "bidvolume": "169704"
+                },
+                {
+                  "bidprice": "12.16",
+                  "bidvolume": "223400"
+                },
+                {
+                  "bidprice": "12.15",
+                  "bidvolume": "433900"
+                },
+                {
+                  "bidprice": "12.14",
+                  "bidvolume": "203769"
+                },
+                {
+                  "bidprice": "12.13",
+                  "bidvolume": "202400"
+                }
+              ],
+              "detailinfos": [
+                {
+                  "time": "1669359366",
+                  "volume": "40711",
+                  "price": "12.15",
+                  "type": "0"
+                },
+                {
+                  "time": "1669359369",
+                  "volume": "114100",
+                  "price": "12.15",
+                  "type": "0"
+                },
+                {
+                  "time": "1669359372",
+                  "volume": "8000",
+                  "price": "12.15",
+                  "type": "0"
+                },
+                {
+                  "time": "1669359375",
+                  "volume": "131100",
+                  "price": "12.16",
+                  "type": "1",
+                  "bsFlag": "B"
+                },
+                {
+                  "time": "1669359378",
+                  "volume": "18400",
+                  "price": "12.15",
+                  "type": "0"
+                },
+                {
+                  "time": "1669359381",
+                  "volume": "21900",
+                  "price": "12.16",
+                  "type": "1",
+                  "bsFlag": "B"
+                },
+                {
+                  "time": "1669359384",
+                  "volume": "16600",
+                  "price": "12.16",
+                  "type": "1",
+                  "bsFlag": "B"
+                },
+                {
+                  "time": "1669359387",
+                  "volume": "13300",
+                  "price": "12.15",
+                  "type": "0"
+                },
+                {
+                  "time": "1669359390",
+                  "volume": "21800",
+                  "price": "12.15",
+                  "type": "0"
+                },
+                {
+                  "time": "1669359393",
+                  "volume": "6500",
+                  "price": "12.15",
+                  "type": "0"
+                },
+                {
+                  "time": "1669359396",
+                  "volume": "24400",
+                  "price": "12.16",
+                  "type": "1",
+                  "bsFlag": "B"
+                },
+                {
+                  "time": "1669359399",
+                  "volume": "8600",
+                  "price": "12.15",
+                  "type": "0"
+                },
+                {
+                  "time": "1669359402",
+                  "volume": "40700",
+                  "price": "12.15",
+                  "type": "0"
+                },
+                {
+                  "time": "1669359405",
+                  "volume": "19700",
+                  "price": "12.15",
+                  "type": "0"
+                },
+                {
+                  "time": "1669359408",
+                  "volume": "17600",
+                  "price": "12.16",
+                  "type": "1",
+                  "bsFlag": "B"
+                },
+                {
+                  "time": "1669359411",
+                  "volume": "6900",
+                  "price": "12.16",
+                  "type": "1",
+                  "bsFlag": "B"
+                },
+                {
+                  "time": "1669359414",
+                  "volume": "12400",
+                  "price": "12.16",
+                  "type": "1",
+                  "bsFlag": "B"
+                },
+                {
+                  "time": "1669359417",
+                  "volume": "16700",
+                  "price": "12.15",
+                  "type": "0"
+                },
+                {
+                  "time": "1669359420",
+                  "volume": "9300",
+                  "price": "12.15",
+                  "type": "0"
+                },
+                {
+                  "time": "1669359600",
+                  "volume": "2097196",
+                  "price": "12.17",
+                  "type": "1",
+                  "bsFlag": "B"
+                }
+              ],
+              "update": {
+                "text": "11-25 15:00:00",
+                "time": "1669359600",
+                "realUpdateTime": "1669359600",
+                "timezone": "\u5317\u4eac\u65f6\u95f4",
+                "shortZone": "\u5317\u4eac",
+                "time_diff": "0",
+                "stockStatus": "\u5df2\u6536\u76d8",
+                "type": "5"
+              },
+              "adr_info": [],
+              "member_info": {
+                "up": {
+                  "number": "0",
+                  "precent": "0%"
+                },
+                "down": {
+                  "number": "0",
+                  "precent": "0%"
+                },
+                "balance": {
+                  "number": "0",
+                  "precent": "0%"
+                }
+              },
+              "pkInfo": {
+                "indicatorTitle": "\u6307\u6807\u8bf4\u660e",
+                "indicatorUrl": "\/sf?pd=new_stock&openapi=1&dspName=iphone&from_sf=1&resource_id=5307&title=%E6%8C%87%E6%A0%87%E8%AF%B4%E6%98%8E&word=000001",
+                "list": [
+                  {
+                    "ename": "open",
+                    "name": "\u4eca\u5f00",
+                    "value": "11.79",
+                    "status": "up"
+                  },
+                  {
+                    "ename": "high",
+                    "name": "\u6700\u9ad8",
+                    "value": "12.23",
+                    "status": "up"
+                  },
+                  {
+                    "ename": "volume",
+                    "name": "\u6210\u4ea4\u91cf",
+                    "value": "176.07\u4e07\u624b"
+                  },
+                  {
+                    "ename": "preClose",
+                    "name": "\u6628\u6536",
+                    "value": "11.77"
+                  },
+                  {
+                    "ename": "low",
+                    "name": "\u6700\u4f4e",
+                    "value": "11.77",
+                    "status": "same"
+                  },
+                  {
+                    "ename": "amount",
+                    "name": "\u6210\u4ea4\u989d",
+                    "value": "21.30\u4ebf"
+                  },
+                  {
+                    "ename": "turnoverRatio",
+                    "name": "\u6362\u624b\u7387",
+                    "value": "0.91%"
+                  },
+                  {
+                    "ename": "peratio",
+                    "name": "\u5e02\u76c8(TTM)",
+                    "helpIcon": "1",
+                    "value": "5.39"
+                  },
+                  {
+                    "ename": "capitalization",
+                    "name": "\u603b\u5e02\u503c",
+                    "value": "2362\u4ebf"
+                  }
+                ],
+                "origin_pankou": {
+                  "open": "11.79",
+                  "preClose": "11.77",
+                  "volume": "176072817",
+                  "turnoverRatio": "0.91",
+                  "high": "12.23",
+                  "low": "11.77",
+                  "limitUp": "12.95",
+                  "limitDown": "10.59",
+                  "inside": "68624688",
+                  "outside": "107448129",
+                  "amount": "2130171605",
+                  "amplitudeRatio": "3.91",
+                  "weibiRatio": "-72.44",
+                  "volumeRatio": "1.62",
+                  "currencyValue": "236165506381",
+                  "capitalization": "236170024469",
+                  "peratio": "5.39",
+                  "lyr": "6.5",
+                  "bvRatio": "0.66",
+                  "perShareEarn": "2.26",
+                  "netAssetsPerShare": "18.32",
+                  "circulatingCapital": "19405546950",
+                  "totalShareCapital": "19405918198",
+                  "priceLimit": "3.40",
+                  "w52_low": "10.22",
+                  "w52_high": "18.83",
+                  "expire_date": "",
+                  "holdingAmount": "0",
+                  "prevSettlement": "0",
+                  "currentPrice": "12.17"
+                }
+              },
+              "tab": {
+                "id": "1",
+                "cx": {
+                  "o": [
+                    "09:30",
+                    "10:30",
+                    "11:30\/13:00",
+                    "14:00",
+                    "15:00"
+                  ]
+                },
+                "cy": [],
+                "p": "",
+                "points": "242",
+                "pop": [],
+                "shoupan": "11.77"
+              },
+              "cur": {
+                "info": "+0.40 (+3.40%)",
+                "num": "12.17",
+                "status": "up",
+                "avg": "12.10"
+              },
+              "marketType": "ab",
+              "market": "ab",
+              "code": "000001",
+              "tabs": [
+                {
+                  "name": "minute",
+                  "type": "minute",
+                  "url": "http:\/\/stock.pae.baidu.com\/new_stock\/getstockinfo",
+                  "text": "\u5206\u65f6",
+                  "select": "1",
+                  "dayupdate": "1",
+                  "code": "000001",
+                  "stockName": "\u5e73\u5b89\u94f6\u884c",
+                  "market": "ab",
+                  "pcUrl": "http:\/\/opendata.baidu.com\/api.php?resource_id=5353&group=quotation_minute_ab&query=000001&code=000001&all=1&pointType=string&dsp=pc&requestType=async&stockName=\u5e73\u5b89\u94f6\u884c&provideName=\u767e\u5ea6\u80a1\u5e02\u901a"
+                },
+                {
+                  "name": "five",
+                  "type": "five",
+                  "url": "http:\/\/stock.pae.baidu.com\/new_stock\/getstockinfo",
+                  "text": "\u4e94\u65e5",
+                  "select": "",
+                  "dayupdate": "1",
+                  "code": "000001",
+                  "stockName": "\u5e73\u5b89\u94f6\u884c",
+                  "market": "ab",
+                  "pcUrl": "http:\/\/opendata.baidu.com\/api.php?resource_id=5353&dsp=iphone&all=1&pointType=string&group=quotation_fiveday_ab&query=000001&code=000001"
+                },
+                {
+                  "name": "dayK",
+                  "type": "dayK",
+                  "url": "http:\/\/stock.pae.baidu.com\/new_stock\/getstockinfo",
+                  "text": "\u65e5K",
+                  "select": "",
+                  "dayupdate": "1",
+                  "code": "000001",
+                  "stockName": "\u5e73\u5b89\u94f6\u884c",
+                  "market": "ab",
+                  "pcUrl": "http:\/\/opendata.baidu.com\/api.php?resource_id=5353&all=1&pointType=string&count=54&group=quotation_kline_ab&ktype=1&query=000001&code=000001&ktype=1&word=000001&name=\u5e73\u5b89\u94f6\u884c&format=json&from_mid=1&oe=utf-8&dsp=pc&tn=wisexmlnew&need_di=1&all=1&query=000001&eprop=dayK&euri=undefined&request_type=sync&stock_type=ab"
+                },
+                {
+                  "name": "weekK",
+                  "type": "weekK",
+                  "url": "http:\/\/stock.pae.baidu.com\/new_stock\/getstockinfo",
+                  "text": "\u5468K",
+                  "select": "",
+                  "dayupdate": "1",
+                  "code": "000001",
+                  "stockName": "\u5e73\u5b89\u94f6\u884c",
+                  "market": "ab",
+                  "pcUrl": "http:\/\/opendata.baidu.com\/api.php?resource_id=5353&all=1&pointType=string&count=54&group=quotation_kline_ab&ktype=2&query=000001&code=000001&ktype=2&word=000001&name=\u5e73\u5b89\u94f6\u884c&format=json&from_mid=1&oe=utf-8&dsp=pc&tn=wisexmlnew&need_di=1&all=1&query=000001&eprop=weekK&euri=undefined&request_type=sync&stock_type=ab"
+                },
+                {
+                  "name": "monthK",
+                  "type": "monthK",
+                  "url": "http:\/\/stock.pae.baidu.com\/new_stock\/getstockinfo",
+                  "text": "\u6708K",
+                  "select": "",
+                  "dayupdate": "1",
+                  "code": "000001",
+                  "stockName": "\u5e73\u5b89\u94f6\u884c",
+                  "market": "ab",
+                  "pcUrl": "http:\/\/opendata.baidu.com\/api.php?resource_id=5353&all=1&pointType=string&count=54&group=quotation_kline_ab&ktype=3&query=000001&code=000001&ktype=3&word=000001&name=\u5e73\u5b89\u94f6\u884c&format=json&from_mid=1&oe=utf-8&dsp=pc&tn=wisexmlnew&need_di=1&all=1&query=000001&eprop=monthK&euri=undefined&request_type=sync&stock_type=ab"
+                },
+                {
+                  "name": "oneyear",
+                  "type": "oneyear",
+                  "url": "http:\/\/stock.pae.baidu.com\/new_stock\/getstockinfo",
+                  "text": "1\u5e74",
+                  "select": "",
+                  "dayupdate": "1",
+                  "code": "000001",
+                  "stockName": "\u5e73\u5b89\u94f6\u884c",
+                  "market": "ab",
+                  "pcUrl": "http:\/\/opendata.baidu.com\/api.php?resource_id=5353&all=1&pointType=string&group=quotation_kline_ab&ktype=1&query=000001&code=000001&word=000001&name=\u5e73\u5b89\u94f6\u884c&format=json&from_mid=1&oe=utf-8&dsp=pc&tn=wisexmlnew&need_di=1&all=1&query=000001&eprop=yearK&stock_type=ab"
+                }
+              ],
+              "priceinfo": ""
+            },
+            "ResultURL": "http:\/\/nourl.baidu.com\/34436",
+            "sigma_use": "1",
+            "normal_use": "1",
+            "weak_use": "1",
+            "strong_use": "1",
+            "pk": [],
+            "encoding": "gbk",
+            "card_order": "34437",
+            "disp_data_url_ex": {
+              "aesplitid": "5353_34436"
+            },
+            "data_source": "AE"
+          },
+          "extData": {
+            "tplt": "quotation_minute_ab",
+            "OriginQuery": "000001",
+            "resourceid": "34436"
+          }
+        }
+      },
+      "OriginSrcID": "5353"
+    }
+  ],
+  "QueryID": "3390608742"
+}
